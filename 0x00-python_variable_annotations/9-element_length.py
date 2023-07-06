@@ -5,8 +5,11 @@
 """
 import typing
 
+v = typing.Tuple[typing.Sequence, int]
 
-def element_length(lst: typing.Iterable[typing.Sequence]) ->\
-        typing.Tuple[typing.Sequence, int]:
-    """return values with the appropriate types"""
+
+def element_length(lst: typing.Iterable[typing.Sequence]) -> v:
+    """
+        return values with the appropriate types
+    """
     return [(i, len(i)) for i in lst]
