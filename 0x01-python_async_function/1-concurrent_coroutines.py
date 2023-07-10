@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""asynchronous coroutine """
+"""asynchronous c oroutine """
 
 import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random

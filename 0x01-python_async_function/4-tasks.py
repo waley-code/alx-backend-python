@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-Test file for pait_n coroutine
+ Test file for pait_n coroutine
 '''
 import asyncio
 task_wait_random = __import__('3-tasks').task_wait_random
