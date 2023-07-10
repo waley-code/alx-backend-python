@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-"""asynchronous c oroutine """
+"""asynchronous c 
+    oroutine
+"""
 
 import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n, max_delay):
-    """ return the list of all the delays (float values)."""
+    """return the list of all the 
+        elays (float values).
+    """
     tasks = []
     for _ in range(n):
         task = asyncio.create_task(wait_random(max_delay))
