@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+    wait_n except task_wait_random
 """
 import asyncio
 import typing
