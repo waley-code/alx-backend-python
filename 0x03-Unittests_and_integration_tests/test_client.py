@@ -25,10 +25,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         """ to unit-test GithubOrgClient._public_repos_url """
-        with patch.object(GithubOrgClient,
-                        "org",
-                        new_callable=PropertyMock,
-                        return_value={"repos_url": "holberton"}) as mock_get:
+        with patch.object(GithubOrgClient, "org", new_callable=PropertyMock,
+                          return_value={"repos_url": "holberton"}) as mock_get:
             test_json = {"repos_url": "holberton"}
             test_client = GithubOrgClient(test_json.get("repos_url"))
             test_return = test_client._public_repos_url
@@ -39,10 +37,9 @@ class TestGithubOrgClient(unittest.TestCase):
     @patch("client.get_json", return_value=[{"name": "holberton"}])
     def test_public_repos(self, mock_get):
         """ to unit-test GithubOrgClient.public_repos """
-        with patch.object(GithubOrgClient,
-                         "_public_repos_url",
-                         new_callable=PropertyMock,
-                         return_value="https://api.github.com/") as mock_pub:
+        with patch.object(GithubOrgClient, "_public_repos_url",
+                          new_callable=PropertyMock,
+                          return_value="https://api.github.com/") as mock_pub:
             test_client = GithubOrgClient("hoberton")
             test_return = test_client.public_repos()
             self.assertEqual(test_return, ["holberton"])
@@ -61,12 +58,15 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(expected_return, test_return)
 
 
+"""Parameters for testsing  IntegrationGithubOrgClient """
+
+
 @parameterized_class(
     ("org_payload", "repos_payload", "expected_repos", "apache2_repos"),
     TEST_PAYLOAD
 )
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    """ TESTCASE """
+    """ A test suite for testsing  IntegrationGithubOrgClient """
     @classmethod
     def setUpClass(cls):
         """ It is part of the unittest.TestCase API
